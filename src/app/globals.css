@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --bg: 245 245 250; }
+
+html, body, #__next { height: 100%; }
+body { @apply bg-slate-50 text-slate-900; }
+
+.perf-bg {
+  background: radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+.door { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(.2,.6,.2,1); }
+.door-open { transform: rotateY(-12deg) translateZ(0); }
+
+.snowflake { position: fixed; top: -10px; pointer-events: none; animation: fall linear infinite; }
+@keyframes fall { to { transform: translateY(110vh); opacity: 0.9; } }
