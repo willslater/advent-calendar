@@ -1,25 +1,27 @@
-# Contra Vision Advent Calendar
+# Contra Vision — 12 Days to the Party (Next.js + TS + Tailwind)
 
-A simple, festive Advent site for 24 days of December.
+- **12 doors** (1..12) with **hard-coded unlock dates** in `src/data/config.ts`
+- **No `clsx` dependency**
+- **Debug**: `?debug=N` pretends it’s Day N
+- **Preview**: `?preview=1` unlocks everything
+- Hydration-safe timezone subtitle
 
-## Quick start (CodeSandbox)
-1. Open **https://codesandbox.io/** and create a **Next.js (App Router) + TypeScript** sandbox.
-2. Add **Tailwind** (or use a Tailwind + Next template). Paste the files above into matching paths.
-3. Run with `yarn dev` (CodeSandbox runs automatically).
+## Configure unlock dates
+Edit `src/data/config.ts`:
+```ts
+export const UNLOCK_DATES: Record<number, string> = {
+  1: "2025-12-13",
+  ...
+  12: "2025-12-24"
+};
+```
+Dates are compared by local time (start of day).
 
-## Local
+## Run
 ```bash
 yarn
 yarn dev
 ```
+Open http://localhost:3000/?preview=1
 
-Visit http://localhost:3000
-
-## Editing Content
-- Update `src/data/days.ts` entries (video/text/image/quiz).
-- For testing, append `?preview=1` to the URL to unlock all doors.
-
-## Notes
-- Unlock logic: Doors open on Dec N in the user’s local timezone.
-- Progress and quiz score are saved in `localStorage`.
-- All external `<a href>` links use full URLs as requested.
+All external links use **full absolute URLs**.

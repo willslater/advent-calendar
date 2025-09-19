@@ -1,12 +1,10 @@
-import clsx from "clsx";
-
 export default function Door({ day, open }: { day: number; open: boolean }) {
   return (
     <div
-      className={clsx(
-        "door relative h-28 md:h-32 rounded-xl overflow-hidden bg-white shadow-soft border border-slate-200",
-        open && "door-open"
-      )}
+      className={
+        "door relative h-28 md:h-32 rounded-xl overflow-hidden bg-white shadow-soft border border-slate-200" +
+        (open ? " door-open" : "")
+      }
     >
       <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-slate-800">
         {day}

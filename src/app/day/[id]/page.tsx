@@ -1,8 +1,7 @@
-// src/app/day/[id]/page.tsx
 "use client";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { canOpenDay, isPreview, getDebugDay } from "@/lib/date";
+import { canOpenByCalendar, isPreview } from "@/lib/date";
 import { useEffect, useMemo, useState } from "react";
 import DoorModal from "@/components/DoorModal";
 import { getDayContent } from "@/data/days";
@@ -23,39 +22,27 @@ export default function DayPage() {
     return val ? Number(val) : null;
   }, [search]);
 
-  const preview = isPreview();
+  const preview = search.get("preview") === "1" || isPreview();
   const open = useMemo(() => {
     if (preview) return true;
     if (debugDay) return day <= debugDay;
-    return canOpenDay(day, now);
+    return canOpenByCalendar(day, now);
   }, [preview, debugDay, day, now]);
 
   const content = getDayContent(day);
-
-  const backHref = debugDay
-    ? `/?debug=${debugDay}`
-    : search.get("preview") === "1"
-    ? "/?preview=1"
-    : "/";
+  const backHref = debugDay ? `/?debug=${debugDay}` : preview ? "/?preview=1" : "/";
 
   return (
     <div className="max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-2xl font-bold text-cvBlue">Day {day}</h2>
-        <Link className="text-sm underline" href={backHref}>
-          Back to calendar
-        </Link>
+        <Link className="text-sm underline" href={backHref}>Back to calendar</Link>
       </div>
 
       {!open ? (
         <div className="p-6 rounded-xl bg-white shadow-soft text-center">
-          <p className="text-lg">
-            This door unlocks on day {day} of December in your timezone.
-          </p>
-          <p className="text-sm text-slate-500 mt-2">
-            For testing, add <code>?preview=1</code> or{" "}
-            <code>?debug={Math.max(1, day)}</code> to the URL.
-          </p>
+          <p className="text-lg">This door is not unlocked yet.</p>
+          <p className="text-sm text-slate-500 mt-2">Use <code>?preview=1</code> or <code>?debug={Math.max(1, day)}</code> for testing.</p>
         </div>
       ) : (
         <DoorModal day={day} content={content} />

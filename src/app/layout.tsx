@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import Snow from "@/components/Snow";
 
 export const metadata: Metadata = {
-  title: "Contra Vision Advent Calendar",
-  description: "24 days of festive fun for Contra Vision staff"
+  title: "Contra Vision 12 Days",
+  description: "12-day build-up to the Christmas party"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 export default function Snow() {
   useEffect(() => {
-    const count = 30;
+    const count = 32;
     const nodes: HTMLDivElement[] = [];
     for (let i = 0; i < count; i++) {
       const el = document.createElement("div");
