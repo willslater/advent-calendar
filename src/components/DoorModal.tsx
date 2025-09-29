@@ -15,9 +15,15 @@ export default function DoorModal({
         <div className="flex-1">
           <h3 className="text-xl font-semibold mb-2">{content.title}</h3>
 
+          {/* TEXT with optional audio + HTML markup */}
           {content.type === "text" && (
             <>
-              <p className="text-slate-700 leading-relaxed">{content.body}</p>
+              {content.body && (
+                <div
+                  className="text-slate-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: content.body }}
+                />
+              )}
               {"audioSrc" in content && content.audioSrc && (
                 <audio className="mt-3 w-full" controls src={content.audioSrc}>
                   Your browser does not support the audio element.
@@ -26,6 +32,7 @@ export default function DoorModal({
             </>
           )}
 
+          {/* VIDEO embed */}
           {content.type === "video" && (
             <div className="aspect-video mt-3">
               <iframe
@@ -38,6 +45,7 @@ export default function DoorModal({
             </div>
           )}
 
+          {/* IMAGE with optional caption */}
           {content.type === "image" && (
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -52,29 +60,67 @@ export default function DoorModal({
             </>
           )}
 
+          {/* MENU with HTML support */}
           {content.type === "menu" && (
             <div className="space-y-6">
+              {content.body && (
+                <div
+                  className="text-slate-700 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: content.body }}
+                />
+              )}
               {content.sections.map((section, idx) => (
                 <div key={idx}>
-                  <h4 className="text-lg font-semibold text-cvBlue mb-2">
+                  <h4 className="text-lg font-semibold text-cvBlue mb-3">
                     {section.title}
                   </h4>
-                  <ul className="list-disc list-inside space-y-1 text-slate-700">
-                    {section.items.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+
+                  <div className="space-y-2">
+                    {section.items.map((item, i) => {
+                      if (typeof item === "string") {
+                        return (
+                          <div
+                            key={i}
+                            className="text-sm text-slate-800"
+                            dangerouslySetInnerHTML={{ __html: item }}
+                          />
+                        );
+                      }
+                      if (item.html) {
+                        return (
+                          <div
+                            key={i}
+                            className="text-sm text-slate-800"
+                            dangerouslySetInnerHTML={{ __html: item.html }}
+                          />
+                        );
+                      }
+                      return (
+                        <div key={i} className="text-sm text-slate-800">
+                          <span className="font-semibold">{item.title}</span>
+                          {item.info && (
+                            <span className="text-slate-700">
+                              {" "}
+                              — {item.info}
+                            </span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               ))}
             </div>
           )}
 
+          {/* AUDIO-only content */}
           {content.type === "audio" && (
             <audio className="mt-3 w-full" controls src={content.src}>
               Your browser does not support the audio element.
             </audio>
           )}
 
+          {/* Optional link */}
           {"link" in content && (content as any).link && (
             <a
               className="underline text-cvBlue mt-3 inline-block"

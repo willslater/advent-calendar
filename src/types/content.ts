@@ -27,14 +27,24 @@ export type AudioContent = {
   title: string;
   src: string; // e.g. /media/Contravision%20Christmas%20Save%20the%20Date.mp3
 };
+
+export type MenuItem =
+  | string // optional: raw HTML string
+  | {
+      title: string; // dish name (will be bold)
+      info?: string; // description (regular weight)
+      html?: string; // alternatively, supply a pre-marked-up HTML string
+    };
+
 export type MenuSection = {
   title: string;
-  items: string[];
+  items: MenuItem[];
 };
 
 export type MenuContent = {
   type: "menu";
   title: string;
+  body: string;
   sections: MenuSection[];
 };
 

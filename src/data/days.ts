@@ -4,42 +4,85 @@ export const DAYS: Record<number, DayContent> = {
   1: {
     type: "text",
     title: "Save the Date",
-    body: "The Contra Vision Christmas Party is coming. We have made booking for 11th December based on the majority of confirmations. If you originally said you were not able to make that date but now can please let us know ASAP.",
+    body: "The Contra Vision Christmas Party is coming.<br /><br /> We have made booking for 11th December based on the majority of confirmations. If you originally said you were not able to make that date but now can please let us know ASAP.",
     audioSrc: "/media/Contravision%20Christmas%20Save%20the%20Date.mp3",
   },
 
   2: {
     type: "menu",
     title: "Menu Reveal – Choose Your Courses",
+    body: "Please select starter, main and dessert and email your selections to...",
     sections: [
       {
         title: "Starters",
         items: [
-          "Traditional Oak-Smoked Salmon – orange-braised cranberries, rye bread",
-          "Grilled Goats’ Cheese & Maple Fig Salad (v) – fig & honey chutney, sherry vinegar dressing",
-          "Classic Prawn Cocktail – king prawns, cocktail sauce, toasted brioche",
-          "Duck Liver Parfait* – pickled grapes, Bramley apple & fig chutney, toasted brioche",
-          "Roasted Butternut Squash Soup (v) – pumpkin seeds, butternut squash crisps, toasted sourdough (vegan option available)",
+          {
+            title: "Traditional Oak-Smoked Salmon",
+            info: "orange-braised cranberries, rye bread",
+          },
+          {
+            title: "Grilled Goats’ Cheese & Maple Fig Salad (v)",
+            info: "fig & honey chutney, sherry vinegar dressing",
+          },
+          {
+            title: "Classic Prawn Cocktail",
+            info: "king prawns, cocktail sauce, toasted brioche",
+          },
+          {
+            title: "Duck Liver Parfait*",
+            info: "pickled grapes, Bramley apple & fig chutney, toasted brioche",
+          },
+          {
+            title: "Roasted Butternut Squash Soup (v)",
+            info: "pumpkin seeds, butternut squash crisps, toasted sourdough (ve option available)",
+          },
         ],
       },
       {
         title: "Mains",
         items: [
-          "Festive Turkey – cranberry stuffing, pig in blanket, garlic & thyme roast potatoes, maple-roasted carrots & parsnips, mulled wine red cabbage, shaved Brussels sprouts with chestnuts, red wine jus",
-          "Braised Blade of Beef – buttered mash, mulled wine red cabbage, roasted carrots & shallot, red wine jus",
-          "Pan-Seared Rainbow Trout – cauliflower velouté, sautéed baby potatoes, Tenderstem® broccoli, capers",
-          "Maple & Cinnamon Glazed Pork Belly – buttery mash, mulled wine red cabbage, candied apple purée, red wine jus, crackling",
-          "Root Vegetable Nut Roast (ve) – garlic & thyme roast potatoes, maple-roasted carrots & parsnips, mulled wine red cabbage, onion gravy",
+          {
+            title: "Festive Turkey",
+            info: "cranberry stuffing, pig in blanket, garlic & thyme roast potatoes, maple-roasted carrots & parsnips, mulled wine red cabbage, shaved sprouts with chestnuts, red wine jus",
+          },
+          {
+            title: "Braised Blade of Beef",
+            info: "buttered mash, mulled wine red cabbage, roasted carrots & shallot, red wine jus",
+          },
+          {
+            title: "Pan-Seared Rainbow Trout",
+            info: "cauliflower velouté, sautéed baby potatoes, Tenderstem® broccoli, capers",
+          },
+          {
+            title: "Maple & Cinnamon Glazed Pork Belly",
+            info: "buttery mash, mulled wine red cabbage, candied apple purée, red wine jus, crackling",
+          },
+          {
+            title: "Root Vegetable Nut Roast (ve)",
+            info: "garlic & thyme roast potatoes, maple-roasted carrots & parsnips, mulled wine red cabbage, onion gravy",
+          },
         ],
       },
       {
         title: "Desserts",
         items: [
-          "Christmas Pudding (v) – vanilla bean custard, brandy butter",
-          "Dark Chocolate Torte (v) – blackcurrant sorbet, Belgian chocolate crumb, blackberries",
-          "Apple, Rhubarb & Cinnamon Crumble (v) – ginger ice cream (vegan option available)",
-          "Lemon Meringue Tart (v) – berry coulis, mint",
-          "Salted Caramel Profiteroles (v) – fresh berries, toffee sauce",
+          {
+            title: "Christmas Pudding (v)",
+            info: "vanilla bean custard, brandy butter",
+          },
+          {
+            title: "Dark Chocolate Torte (v)",
+            info: "blackcurrant sorbet, Belgian chocolate crumb, blackberries",
+          },
+          {
+            title: "Apple, Rhubarb & Cinnamon Crumble (v)",
+            info: "ginger ice cream (ve option available)",
+          },
+          { title: "Lemon Meringue Tart (v)", info: "berry coulis, mint" },
+          {
+            title: "Salted Caramel Profiteroles (v)",
+            info: "fresh berries, toffee sauce",
+          },
         ],
       },
     ],
