@@ -24,6 +24,13 @@ export default function DoorModal({
                   dangerouslySetInnerHTML={{ __html: content.body }}
                 />
               )}
+              {content.img && (
+                <img
+                  src={content.img}
+                  alt={content.title}
+                  className="rounded-lg border mt-3"
+                />
+              )}
               {"audioSrc" in content && content.audioSrc && (
                 <audio className="mt-3 w-full" controls src={content.audioSrc}>
                   Your browser does not support the audio element.

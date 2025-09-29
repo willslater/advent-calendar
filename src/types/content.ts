@@ -4,6 +4,7 @@ export type TextContent = {
   type: "text";
   title: string;
   body: string;
+  img?: string;
   audioSrc?: string; // optional MP3 path
   link?: LinkOut;
 };
