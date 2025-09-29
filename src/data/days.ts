@@ -3,7 +3,7 @@ import type { DayContent } from "@/types/content";
 export const DAYS: Record<number, DayContent> = {
   1: {
     type: "text",
-    title: "Save the Date",
+    title: "Save the Date - 11th December 2025",
     img: "/media/savedate.png",
     body: "The Contra Vision Christmas Party is coming.<br /><br /> We have made booking for 11th December based on the majority of confirmations. If you originally said you were not able to make that date but now can please let us know ASAP.",
     audioSrc: "/media/Contravision%20Christmas%20Save%20the%20Date.mp3",
