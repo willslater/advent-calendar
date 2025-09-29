@@ -4,6 +4,7 @@ export type TextContent = {
   type: "text";
   title: string;
   body: string;
+  audioSrc?: string; // optional MP3 path
   link?: LinkOut;
 };
 
@@ -18,7 +19,28 @@ export type ImageContent = {
 export type VideoContent = {
   type: "video";
   title: string;
-  embedUrl: string;
+  embedUrl: string; // https://www.youtube.com/embed/...
 };
 
-export type DayContent = TextContent | ImageContent | VideoContent;
+export type AudioContent = {
+  type: "audio";
+  title: string;
+  src: string; // e.g. /media/Contravision%20Christmas%20Save%20the%20Date.mp3
+};
+export type MenuSection = {
+  title: string;
+  items: string[];
+};
+
+export type MenuContent = {
+  type: "menu";
+  title: string;
+  sections: MenuSection[];
+};
+
+export type DayContent =
+  | TextContent
+  | ImageContent
+  | VideoContent
+  | AudioContent
+  | MenuContent;

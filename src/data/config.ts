@@ -5,7 +5,7 @@ export const PARTY_DATE = "2025-12-11";
 
 export const UNLOCK_DATES: Record<number, string> = {
   1: "2025-09-29",
-  2: "2025-10-06",
+  2: "2025-09-10",
   3: "2025-10-13",
   4: "2025-10-20",
   5: "2025-10-27",
