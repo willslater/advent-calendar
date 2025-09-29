@@ -7,6 +7,7 @@ import { canOpenByCalendar, isPreview } from "@/lib/date";
 import { useEffect, useMemo, useState } from "react";
 import DoorModal from "@/components/DoorModal";
 import { getDayContent } from "@/data/days";
+import CheekyLockedArt from "@/components/CheekyLockedArt";
 
 export default function DayClient() {
   const params = useParams<{ id: string }>();
@@ -51,11 +52,8 @@ export default function DayClient() {
 
       {!open ? (
         <div className="p-6 rounded-xl bg-white shadow-soft text-center">
-          <p className="text-lg">This door is not unlocked yet.</p>
-          <p className="text-sm text-slate-500 mt-2">
-            For testing, add <code>?preview=1</code> or{" "}
-            <code>?debug={Math.max(1, day)}</code> to the URL.
-          </p>
+          <p className="text-lg">Hey cheeky, this door is not unlocked yet.</p>
+          <CheekyLockedArt />
         </div>
       ) : (
         <DoorModal day={day} content={content} />

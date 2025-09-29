@@ -4,11 +4,15 @@ import Header from "@/components/Header";
 import Snow from "@/components/Snow";
 
 export const metadata: Metadata = {
-  title: "Contra Vision 12 Days",
-  description: "12-day build-up to the Christmas party"
+  title: "Contra Vision Christmas Party Countdown",
+  description: "12-day build-up to the Christmas party",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>

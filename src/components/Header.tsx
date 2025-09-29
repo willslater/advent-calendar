@@ -4,12 +4,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <Link className="font-semibold text-cvBlue" href="/">Contra Vision • 12 Days</Link>
-        <nav className="text-sm text-slate-600 flex items-center gap-4">
-          <a className="hover:underline" href="https://www.contravision.com/">https://www.contravision.com/</a>
-          <a className="hover:underline" href="https://open.spotify.com/">https://open.spotify.com/</a>
-          <a className="hover:underline" href="https://www.justgiving.com/">https://www.justgiving.com/</a>
-        </nav>
+        <Link className="font-semibold text-cvBlue" href="/">
+          Contra Vision Christmas Party Countdown
+        </Link>
       </div>
     </header>
   );
