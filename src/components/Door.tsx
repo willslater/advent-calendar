@@ -1,8 +1,12 @@
-import { UNLOCK_DATES } from "@/data/config";
-
-export default function Door({ day, open }: { day: number; open: boolean }) {
-  const unlockDate = UNLOCK_DATES[day]; // e.g. "2025-12-13"
-
+export default function Door({
+  day,
+  open,
+  title,
+}: {
+  day: number;
+  open: boolean;
+  title?: string;
+}) {
   return (
     <div
       className={
@@ -10,26 +14,23 @@ export default function Door({ day, open }: { day: number; open: boolean }) {
         (open ? " door-open" : "")
       }
     >
-      {/* Day number in the middle */}
-      <div className="absolute inset-0 flex items-center justify-center text-3xl font-bold text-slate-800">
-        {day}
+      {/* Middle content changes based on open/locked */}
+      <div className="absolute inset-0 flex items-center justify-center text-center p-2">
+        {!open && (
+          <span className="text-3xl font-bold text-slate-800">{day}</span>
+        )}
+        {open && (
+          <span className="text-sm font-semibold text-cvBlue">
+            {title ?? `Day ${day}`}
+          </span>
+        )}
       </div>
 
-      {/* Decorative overlays */}
+      {/* Decorative layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-cvBlue/10 to-cvRed/10" />
       <div className="absolute inset-0 perf-bg opacity-60" />
 
-      {/* Unlock date label at top-left */}
-      {unlockDate && (
-        <div className="absolute top-2 left-2 text-[10px] bg-white/80 text-slate-700 rounded px-1.5 py-0.5 shadow">
-          {new Date(unlockDate).toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "short",
-          })}
-        </div>
-      )}
-
-      {/* Status badge bottom-right */}
+      {/* Status badge */}
       {!open && (
         <div className="absolute bottom-2 right-2 text-[10px] px-2 py-0.5 bg-slate-900/80 text-white rounded-full">
           Locked
@@ -37,7 +38,7 @@ export default function Door({ day, open }: { day: number; open: boolean }) {
       )}
       {open && (
         <div className="absolute bottom-2 right-2 text-[10px] px-2 py-0.5 bg-emerald-600 text-white rounded-full">
-          Open
+          Click to Open
         </div>
       )}
     </div>

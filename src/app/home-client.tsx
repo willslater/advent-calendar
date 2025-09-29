@@ -7,6 +7,7 @@ import { buildClientSubtitle, canOpenByCalendar, isPreview } from "@/lib/date";
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { UNLOCK_DATES } from "@/data/config";
+import { getDayContent } from "@/data/days";
 
 export default function HomeClient() {
   const [now, setNow] = useState(new Date());
@@ -63,6 +64,7 @@ export default function HomeClient() {
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 perf-bg p-4 rounded-2xl shadow-soft">
         {days.map((d) => {
+          const content = getDayContent(d);
           const open =
             preview || (debugDay ? d <= debugDay : canOpenByCalendar(d, now));
           const href: UrlObject =
@@ -74,7 +76,7 @@ export default function HomeClient() {
 
           return (
             <Link key={d} href={href} className="block">
-              <Door day={d} open={open} />
+              <Door day={d} open={open} title={content.title} />
             </Link>
           );
         })}

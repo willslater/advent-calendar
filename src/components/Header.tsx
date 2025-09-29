@@ -5,7 +5,7 @@ export default function Header() {
     <header className="sticky top-0 z-30 backdrop-blur bg-white/70 border-b border-slate-200">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link className="font-semibold text-cvBlue" href="/">
-          Contra Vision Christmas Party Countdown
+          Contra Vision 12 Days of Christmas Party Countdown
         </Link>
       </div>
     </header>
