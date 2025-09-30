@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Snow from "@/components/Snow";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Contra Vision Christmas Party Countdown",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Snow />
         <Header />
         <main className="max-w-6xl mx-auto px-4 pb-16">{children}</main>
+        <Analytics />
       </body>
     </html>
   );
