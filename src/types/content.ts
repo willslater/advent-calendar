@@ -47,6 +47,7 @@ export type MenuContent = {
   title: string;
   body: string;
   sections: MenuSection[];
+  audioSrc?: string; // optional MP3 path
 };
 
 export type DayContent =

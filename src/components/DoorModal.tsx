@@ -76,6 +76,11 @@ export default function DoorModal({
                   dangerouslySetInnerHTML={{ __html: content.body }}
                 />
               )}
+              {"audioSrc" in content && content.audioSrc && (
+                <audio className="mt-3 w-full" controls src={content.audioSrc}>
+                  Your browser does not support the audio element.
+                </audio>
+              )}
               {content.sections.map((section, idx) => (
                 <div key={idx}>
                   <h4 className="text-lg font-semibold text-cvBlue mb-3">
