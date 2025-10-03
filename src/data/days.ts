@@ -12,7 +12,7 @@ export const DAYS: Record<number, DayContent> = {
   2: {
     type: "menu",
     title: "Menu Reveal – Choose Your Courses",
-    body: "Please use <b><a target=\"_blank\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=_X_nLPprckmi8f4WKOGSpCrUr7sY-m1BpPqKdtz-e_tURFo0VTIxTTI1SUREUEVQMkhZSFhOTFBCRC4u\">this form</a></b> to select starter, main and dessert. We need your choices by 1st November.<br /><br /> If you have any dietary requirements or allergies please let us know in the form.",
+    body: "Please use <b><a target=\"_blank\" href=\"https://forms.office.com/Pages/ResponsePage.aspx?id=_X_nLPprckmi8f4WKOGSpCrUr7sY-m1BpPqKdtz-e_tURFo0VTIxTTI1SUREUEVQMkhZSFhOTFBCRC4u\">this form</a></b> to select starter, main and dessert. We need your choices by 1st November.<br /><br /> If you have any dietary requirements or allergies please let us know in the form. Gluten free menu is available on request.",
     audioSrc: "/media/menu.mp3",
     sections: [
       {
