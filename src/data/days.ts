@@ -92,9 +92,34 @@ export const DAYS: Record<number, DayContent> = {
 
   3: {
     type: "text",
-    title: "Theme Reveal",
-    body: "This year’s theme: Winter Wonderland. Dress code: festive chic.",
+    title: "Venue Reveal",
+    audioSrc: "/media/browns.mp3",
+    body: `
+      <p>This year’s <strong>Contra Vision Christmas Meal</strong> will be held at:<br />
+        <a  target="_blank" href="https://www.browns-restaurants.co.uk/restaurants/northwest/manchester">Browns Manchester</a>, 
+        1 York Street, Manchester, UK, M2 2AW.
+      </p>
+      <p><a target="_blank"href="https://www.browns-restaurants.co.uk/restaurants/northwest/manchester"><img src="https://www.tagvenue.com/resize/61/7c/widen-1680-noupsize;2366-browns-brasserie-bar-manchester-venue.jpg" alt="Browns Manchester" style="width:100%;max-width:400px;border-radius:8px;border:1px solid #ddd;margin-top:10px;" /></a></p>
+      <p><strong><a target="_blank"href="https://www.browns-restaurants.co.uk/restaurants/northwest/manchester">Visit Website</a></strong></p>
+      
+      <br />
+      <p>Here are the important details for the day:</p>
+      <br />
+      <p><strong>Date:</strong> Thursday 11th December<br />
+      <strong>Finish work:</strong> 2pm (thanks Roger!)<br />
+      <strong>Dinner:</strong> 5:00pm sharp 🍽️</p>
+      <br />
+      <p>Browns is located just behind <strong>Primark</strong>, only a short walk from 
+        <strong>Manchester Piccadilly</strong> station and <strong>St Peter’s Square</strong> tram stop. Opposite Grand Pacific.<br />
+        For those driving, nearby parking can be found at <strong>Q-Park Piazza</strong> and 
+        <strong>NCP Chorlton Street</strong>.
+      </p>
+      <br />
+      <p>If you haven’t chosen your festive feast yet, please do so ASAP so we can confirm numbers with the venue.<br />
+        <br />👉 <strong><a href="https://advent-calendar-mu-nine.vercel.app/day/2">Select your menu choices here</a></strong>.
+      </p>`,
   },
+
   4: {
     type: "image",
     title: "Throwback Pics",
