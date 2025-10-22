@@ -121,11 +121,11 @@ export const DAYS: Record<number, DayContent> = {
   },
 
   4: {
-    type: "image",
-    title: "Throwback Pics",
-    src: "https://images.unsplash.com/photo-1543589077-37f86a39f1f0?w=1200&q=80&auto=format&fit=crop",
-    alt: "Throwback",
-    caption: "Memories from parties past.",
+    type: "text",
+    title: "Dress Theme",
+    audioSrc: "/media/sparkle.mp3",
+    img: "/media/sparkle.png",
+    body: "For this year's party, we're going with a 'White or Black Sparkle' theme! Dress to impress, but keep it comfortable — think smart-casual with a festive twist. Whether it’s a sparkly top, glittery shoes, or a touch of shimmer in your outfit, just make sure you shine!",
   },
   5: {
     type: "text",
