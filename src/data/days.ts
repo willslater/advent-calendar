@@ -129,9 +129,14 @@ export const DAYS: Record<number, DayContent> = {
   },
   5: {
     type: "text",
-    title: "Mini Quiz",
-    body: "Quick trivia today. Winners get raffle entries at the party!",
-    link: { href: "https://www.typeform.com/", label: "Enter the quiz" },
+    title: "Secret Santa",
+    body: "<div><p>It’s that time of year again — Secret Santa is back! 🎅</p><p>You’ve been invited to join our Secret Santa at Draw Names. Each person has been randomly assigned someone to buy for, with a budget of £15.</p><p>👉 Check your inbox for an email invite from <a href='https://www.drawnames.co.uk'>drawnames.co.uk</a></p><p>.</p><p>If you haven’t received one, please let me know so we can resend your invitation.~</p></div>",
+    audioSrc: "/media/Secret sanata.mp3",
+    img: "/media/adam santa.png",
+    link: { 
+      href: "https://www.drawnames.co.uk//", 
+      label: "Go to Draw Names" 
+    },
   },
   6: {
     type: "text",
