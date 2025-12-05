@@ -146,8 +146,9 @@ export const DAYS: Record<number, DayContent> = {
   },
   7: {
     type: "text",
-    title: "",
-    body: "",
+    title: "After the Meal",
+    audioSrc: "/media/After the Meal.mp3",
+    body: "<p>We’re heading to Oast at 7pm after the meal.<br /><br />They don’t take bookings, but they said we’ll be fine. If it’s busy, we’ll just find somewhere else and keep the night going.<br /><br />A few drinks, a lot of laughs, and a perfect way to wind down the evening!</p>",
   },
   8: {
     type: "text",
