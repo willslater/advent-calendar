@@ -153,6 +153,7 @@ export const DAYS: Record<number, DayContent> = {
   8: {
     type: "text",
     title: "Reminder",
+    img: "/media/secret_santa.png",
     body: "<p>Sorry, no song on this one, just a quick reminder to remember to take your secret santa gift to the meal so we can swap them over the meal.</p>",
   },
   9: {
